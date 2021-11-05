@@ -49,6 +49,13 @@ class Snake:
     def move_down(self):
         self.direction = 'down'
 
+    def check_bounds(self, pos):
+        if pos < MIN:
+            pos = MAX - SIZE
+        if pos > MAX - SIZE:
+            pos = MIN
+        return pos
+
     def walk(self):
         # update body
         for i in range(self.length-1,0,-1):
@@ -64,6 +71,9 @@ class Snake:
             self.y[0] -= SIZE
         if self.direction == 'down':
             self.y[0] += SIZE
+        for i in range(self.length):
+            self.x[i] = self.check_bounds(self.x[i])
+            self.y[i] = self.check_bounds(self.y[i])
 
         self.draw()
 
