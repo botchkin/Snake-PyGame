@@ -1,3 +1,10 @@
+# Modifications
+This is an updated version of the snake game built by freecodecamp.org.
+https://github.com/codebasics/python_projects
+
+I am trying to complete the game and make it a little more user friendly and
+dynamic. This is a shared project with my nephew.
+
 ## Snake and Apple Game
 Building snake and apple game in `pygame and python`
 
