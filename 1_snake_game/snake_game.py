@@ -7,6 +7,8 @@ import random
 
 SIZE = 40
 BACKGROUND_COLOR = (0, 0, 0)
+MIN = 0
+MAX = 400
 
 class Apple:
     def __init__(self, parent_screen):
@@ -82,7 +84,7 @@ class Game:
         pygame.mixer.init()
         self.play_background_music()
 
-        self.surface = pygame.display.set_mode((1000, 800))
+        self.surface = pygame.display.set_mode((MAX, MAX))
         self.snake = Snake(self.surface)
         self.snake.draw()
         self.apple = Apple(self.surface)
@@ -134,17 +136,17 @@ class Game:
                 raise "Collision Occurred"
 
     def display_score(self):
-        font = pygame.font.SysFont('arial',30)
+        font = pygame.font.SysFont('arial',12)
         score = font.render(f"Score: {self.snake.length}",True,(200,200,200))
         self.surface.blit(score,(850,10))
 
     def show_game_over(self):
         self.render_background()
-        font = pygame.font.SysFont('arial', 30)
+        font = pygame.font.SysFont('arial', 12)
         line1 = font.render(f"Game is over! Your score is {self.snake.length}", True, (255, 255, 255))
-        self.surface.blit(line1, (200, 300))
+        self.surface.blit(line1, (150, 200))
         line2 = font.render("To play again press Enter. To exit press Escape!", True, (255, 255, 255))
-        self.surface.blit(line2, (200, 350))
+        self.surface.blit(line2, (150, 220))
         pygame.mixer.music.pause()
         pygame.display.flip()
 
