@@ -6,7 +6,7 @@ import time
 import random
 
 SIZE = 40
-BACKGROUND_COLOR = (110, 110, 5)
+BACKGROUND_COLOR = (0, 0, 0)
 
 class Apple:
     def __init__(self, parent_screen):
